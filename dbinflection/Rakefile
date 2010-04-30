@@ -1,0 +1,15 @@
+require 'active_record'
+require 'yaml'
+
+task :default => :migrate
+ 
+task :migrate => :environment do
+  ActiveRecord::Migrator.migrate('db/', nil )
+end
+ 
+task :environment do
+  $config =  YAML.load_file(File.join(File.dirname(__FILE__), 'testexcel.yml'))
+  ActiveRecord::Base.logger = Logger.new(File.join(File.dirname(__FILE__), 'log.txt'))
+  ActiveRecord::Base.establish_connection $config['xwdb'] 
+end
+

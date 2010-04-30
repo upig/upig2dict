@@ -1,0 +1,20 @@
+screen.au3 
+使用infl.txt为输入，利用金山词霸2009的取词，使用热键AL+C复制，从而生成xiang.dict文档。以tab分开单词与释义。
+
+/dbinflection
+    testexcel.rb 用于生成inflection（单词变形）的sqlite数据库（test.sqlite3)也是利用infl.txt做为输入
+
+gen_mobi_project.rb
+    输入UTF-8的字典条目文档（一条一行，以tab键分隔单词与释义，以@CRLF代表换行)，自动生成mobi的字典工程，自动添加单词变形索引。需要与inflections.sqlite3位于同一目录下。
+
+
+xiang.dict 字典数据库
+inflections.sqlite3 变形数据库
+
+
+
+
+
+
+
+
